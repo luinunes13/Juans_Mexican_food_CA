@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8"> <!-- HTML5 charset -->
+    <title>Juan’s Mexican Street Food Calculation form</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/slick.css" />
+    <script type="text/javascript" src="main.js"></script> 
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<header class="main">
+        <main class="col-100 menu-top-page">
+            <div class="header-1">
+                  <!-- Social media -->
+                <div class="social-media">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="./img/rss.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/face.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/tw.png" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                 <!-- Login -->  
+                <div class="signin">             
+                            <form action="" name="cd"> 
+                                <label for="login">Username:</label>
+                                <input type="text" id="login" name="login" size="20" placeholder="Enter a valid username">
+                                <label for="pass">Password:</label>
+                                <input type="password" id="pass" size="20" name="password" placeholder="exactly 11 characters"
+                                minlength="11" maxlength="11" required >
+
+                                <input type="button" value="sign in" onclick="confirmLogin()"> 
+                            </form>
+                </div>
+            </div> 
+        </main>
+    </header>
+    <main class="col-100 menu-urls">
+        <div class="header-2">
+              <!-- Webpages Menu -->
+            <div class="menu">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="order_burrito.html">Order your Burrito</a>
+                    </li>
+                    <li>
+                        <a href="about_us_burrito.html"> About us</a>
+                    </li>
+                    <li>
+                        <a href="location.html"> Location</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="search">
+                <input placeholder="Search Something" type="text" />
+            </div>
+        </div>
+    </main>
+    </div>
+    <div class="col-100">
+        <div class="content highlighted-write">
+            <h1><strong>Now, it is time to order your best Burrito!</strong></h1>
+            <p>A casual Mexican burrito bar with award-winning food at great prices. Slow-cooked meats, the freshest ingredients and authentic salsas made daily. 
+            <br>
+            <h1><strong>Wanna see a November's discount code???</strong></h1>
+            <button type="button" onclick="a_function()" >Show my november discount!</button>
+            </p>
+
+        </div>
+                <div class="col-100 block-form-write">
+                <div class="content" style="margin-left: 32%; float: left;">
+            <form name="burritoForm" action="#">
+    <form>
+        <table class="styled-table">
+        <tr>
+        <td>Username:</td><td><input type="text" name="name" required required size="42"></td>
+        </tr>
+        <td>Password:</td><td><input type="password" name="password" placeholder="exactly 11 characters" required size="42" minlength="11" maxlength="11" required></td>   </tr>
+        <tr>
+        <td>Email Address:</td><td><input type="email" name="email" required placeholder="Enter a valid email address" required size="42"></td>
+        </tr>
+        <tr>
+        <td>Voucher:</td><td> <input type="text" required placeholder="Enter a valid voucher code"required size="42"></td>
+        </tr> 
+        <tr>
+        <td>Select your burrito meal deal:</td>
+        <td>
+        <select name="burritoname" required>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="OP1">Salsa Chicken Burrito Filling</option>
+            <option value="OP2">Delicious Black Bean Burritos</option>
+            <option value="OP3">Juan's Big Bad Bean Burrito</option>
+            <option value="OP4">Spicy Beef Burritos</option>
+            <option value="OP5">Addictive Sweet Potato Burritos</option>
+            <option value="OP6">Fabulous Wet Burritos</option>
+        </select>
+        </td>
+        </tr>
+        <tr>
+        <td>Select your burrito Size:</td>
+        <td>
+        <select name="burritosize" required>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="LA">Large  &euro; 5</option>
+            <option value="XL">Extra Large  &euro; 7.50</option>
+            <option value="SU">Supersize  &euro; 17</option>
+        </select>
+        </td>
+        </tr>
+        <tr>
+        <td>Number of Burrito: </td>
+        <td><input title="Enter Number of Burrito" id="juanburritos" name="juanburritos" type="text" size="2" 
+            maxlength="2"  onchange="allnumeric(document.burritoForm.juanburritos,document.burritoForm.burritosize)">
+        </td> 
+        </tr> 
+    </table>    
+        <label><b>Burrito Order Total Amount</b></label>
+        <input name="tot_amount" id="tot_amount" type="text" readonly>
+        <input type='submit' id='submit' value='Submit' 
+        onclick="calculateTotal()" />
+
+    </form>
+                </div>
+            </div>
+    <div class="col-100 block-image-write">
+        <div class="content" style="margin-left: 20%; float: left;">
+            <div class="col-3 block-write block-image">
+                <img src="./img/imagem1.png">
+                <p><b>Salsa Chicken Burrito Filling</b></p>
+                <p>This standard burrito filling features shredded chicken simmered with tomato sauce, salsa, and seasonings.
+                </p>
+            </div>
+            <div class="col-3 block-write block-image">
+                <img src="./img/imagem2.png">
+                <p><b>Delicious Black Bean Burritos</b></p>
+                <p>Black beans and cilantro combine with onions, bell peppers and jalapenos and cubes of cream cheese.
+                </p>
+            </div>
+            <div class="col-3 block-write block-image">
+                <img src="./img/imagem3.png">
+                <p><b>Juan's Big Bad Bean Burrito</b></p>
+                <p>Vegetarian refried beans, avocado slices, and pico de gallo add up to one hearty veggie burrito. 
+                </p>
+            </div>
+        </div>
+        <div class="content" style="margin-left: 20%; float: left;">
+            <div class="col-3 block-write block-image">
+                <img src="./img/imagem4.png">
+                <p><b>Spicy Beef Burritos</b></p>
+                <p>These spicy homemade burritos combine refried beans and seasoned ground beef with fresh peppers.
+                </p>
+            </div>
+            <div class="col-3 block-write block-image">
+                <img src="./img/imagem5.png">
+                <p><b>Addictive Sweet Potato Burritos</b></p>
+                <p>Here's a top-rated vegetarian burrito with sweet potatoes, spices and kidney beans. Serve these with sour cream, chopped green onions, and salsa.
+                </p>
+            </div>
+            <div class="col-3 block-write block-image">
+                <img src="./img/imagem6.png">
+                <p><b>Fabulous Wet Burritos</b></p>
+                <p>Flour tortillas are filled with a mixture of ground beef, refried beans, and chiles then topped with a generous amount of sauce and cheese. 
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+       Copyright &#169; Juan's Mexican Street Food
+    </footer>
+
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery-migrate.js"></script>
+    <script type="text/javascript" src="./js/slick.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>
